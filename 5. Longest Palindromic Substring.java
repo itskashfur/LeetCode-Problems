@@ -1,34 +1,33 @@
-M
-tags: String, DP
-time: O(n^2)
-space: O(n^2)
+Tags: String, DP
+Time: O(n^2) Space: O(n^2)
 
-给一个string, 找到最长的palindrome substring.
+Problem: Given a string, find the longest palindromic substring.
 
-Related: Longest Palindromic Subsequence, Palindrome Partioning II
+Related: Longest Palindromic Subsequence, Palindrome Partitioning II
 
 O(n^2) is not too hard to think of. How about O(n)?
 
-#### Method1: DP of interval
-- Very similar to `216. Longest Palindromic Subsequence`, but this problem requires solid substring(i+1, j-1) to be palindromic
-- Similarly: process i = n-1, from end so [i + 1, j] is always ready to consume
-- boolean dp[i][j] to mark range (i, j) as palindrome or not.
-- 在计算 dp[i][j]的时候, isPalin[i+1][j-1]应该已经计算过了.
-- time: O(n^2) dp
-- space: O(n^2)
+Method 1: DP of Interval
+Very similar to 216. Longest Palindromic Subsequence, but this problem requires the substring (i+1, j-1) to be palindromic as well.
 
-#### String, Palindrome definition
-- 从中间劈开, 遍历i: 从n个不同的点劈开: 每次劈开都看是否可以从劈开出作为palindromic的中点延伸
-- palindrome两种情况: odd, even palindrome
-- Worst case: 整个string都是相同字符，time complexity变成： 1 + 2 +３　＋　．．．　＋n = O(n^2)
+Similarly: Process i = n-1, from the end so [i + 1, j] is always ready to consume.
 
+Use boolean dp[i][j] to mark the range (i, j) as palindromic or not.
 
+When calculating dp[i][j], isPalin[i+1][j-1] should already be computed.
 
-#### O(n) 
-- TODO
-- https://www.felix021.com/blog/read.php?2040
+Time: O(n^2) dp.
 
-```
+Space: O(n^2)
+
+String, Palindrome Definition
+Split from the middle, traverse i: split from n different points: each split checks if it can extend as a palindromic center.
+
+Two cases of palindromes: odd and even.
+
+Worst case: when the entire string consists of the same character, time complexity becomes: 1 + 2 + 3 + ... + n = O(n^2).
+
+O(n)
 /*
 Given a string S, find the longest palindromic substring in S. 
 You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
