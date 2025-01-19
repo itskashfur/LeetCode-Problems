@@ -1,18 +1,25 @@
-E
 tags: Array, Hash Table
 time: O(n)
 space: O(n)
 
-#### HashMap<value, index>
-- 相对暴力简洁: 找到一个value, 存一个index
-- 若在HashMap里面 match 到结果, 就return HashMap里存的index. 
-- O(n) space && time.
+HashMap<value, index>
+Relatively Violent and Simple Method
+Relatively Violent and Simple Method: Find a value, store an index.
 
-#### Sort array, two pointer
-- 前后++, --搜索. Sort 用时O(nlogn).     
-- 1. 第一步 two pointer 找 value.       
-- 2. 注意，要利用额外的空间保留original array， 用来时候找index. (此处不能用HashMap，因为以value 为key，但value可能重复)      
-- O(n) space, O(nlogn) time.    
+If a result is matched in the HashMap, then return the stored index in the HashMap.
+
+O(n) space and time.
+
+Sort Array, Two Pointers Method
+Sort array, two pointers method:
+
+Use two pointers to search by incrementing from front and decrementing from back. Sorting takes O(nlogn) time.
+
+Note that you need to use additional space to retain the original array, to find the index later. (You cannot use HashMap here because it uses value as the key, but the value might be repeated.)
+
+O(n) space, O(nlogn) time.
+
+  
 
 
 ```
