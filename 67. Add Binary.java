@@ -1,22 +1,3 @@
-E
-tags: Math, String, Two Pointers
-
-#### Two Pointers
-- 注意加法结果的位置.
-- Use two pointers i, j to track the 2 strings
-- Add when i and j are applicable. While (i >= 0 || j >= 0)
-- `StringBuffer.insert(0, x);`
-- handle carry
-
-#### reverse
-- Reverse string -> Convert to Integer List, add up -> Convert back to string
-- pointer 从前向后, 所以只需要 1个pointer.
-- 操作复杂, 如上, 证明可以解决. 没必要reverse.
-
-#### Incorrect: convert to Integer
-把binary换成数字作加法. 如果input很大，那么很可能int,long都hold不住。不保险。
-
-```
 /*
 Given two binary strings, return their sum (also a binary string).
 
@@ -52,7 +33,3 @@ Thoughts:
 Can't just convert to int because of Integer.MAX_VALUE limitation.
 Convert to char, and add up all chars
 */
-
-
-
-```
