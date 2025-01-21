@@ -1,17 +1,3 @@
-E
-tags: Math, Binary Search
-
-#### sqrt(int x)
-- 理解题意, 从[0, x]找一个可以m*m=x的值.
-- 注意, 如果找不到, 最后问考官该return一个什么值：按道理，因为return int, 会取整，那么return一个平方最close to x就可以.
-- 注意 mid 用 long, 因为很可能超过最大int.
-
-#### sqrt(double x)
-- 二分float number, 应该用精度来定义结尾.
-- 还是二分, 但是判断条件变成: while ( end - start > eps)
-- eps = 1e-12,也就是精度到1e-12
-
-```
 /*
 Implement int sqrt(int x).
 
