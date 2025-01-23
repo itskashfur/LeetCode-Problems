@@ -1,15 +1,4 @@
-E
-tags: Tree, DFS
-
-给一个inputSum, 然后dfs, 找到是否有一条path, 得出的path sum 跟 inputSum 一样.
-
-#### DFS
-- 确定好结尾条件: `is leaf` && `val == sum`.
-- 每一层减掉node.val, 然后dfs.
-- 写一写: `root == null => false` 对parent nodes的影响. 这里发现没影响, 所以可以简化成用1个functionDFS.
-
-
-```
+112. Path Sum Problem
 /*
 Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
 
