@@ -1,18 +1,4 @@
-E
-tags: DFS, Tree
 
-给一个binary tree, 找最深depth
-
-#### DFS
-- 这里要走过所有的node, 所以dfs非常合适
-- Divide and conquer. 
-- 维持一个最大值: Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
-- 注意check root == null
-
-#### Note
-- BFS is doable as well, but a bit more code to write: tracks largest level we reach
-
-```
 /*
 Given a binary tree, find its maximum depth.
 
