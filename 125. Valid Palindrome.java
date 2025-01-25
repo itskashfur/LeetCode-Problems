@@ -1,22 +1,4 @@
-E
-tags: Two Pointers, String
-
-验证string是不是 palindrome. 只考虑 alphanumeric, 其他字符可以忽略
-
-#### Two Pointers
-- Time O(n), Space O(1).
-- 普通方法, 两边check, 速度相比较regular expression更快. leetcode 4ms.
-- Use helper functions.
-
-#### Check Palindrome
-- 前后两个指针, 往中间移动, 查看是否字母重合
-
-#### 过滤 alphanumeric
-- 可以用 ASCII code 来手动过滤, 只要 '0' ~ '9', 'a' ~ 'z', 'A' - 'Z' 之间的
-- 也可以用 regular expression: match 所有这些字母, 是 [a-zA-Z0-9]
-- 那凡是不是这些字母的 match, 就是取反: "[^a-zA-Z0-9]". 测试: https://regex101.com/
-
-```
+125.VALID PALINDROME SOLUTION IN JAVA LANGUAGE 
 /*
 Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
