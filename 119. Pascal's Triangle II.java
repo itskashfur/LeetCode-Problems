@@ -1,16 +1,3 @@
-E
-tags: Array, Basic Implementation
-time: O(k^2), pascal triangle size
-space: O(k^2)
-
-简单处理 list. code is very similar to Pascal triangle I.
-
-- 注意 `list = Arrays.asList(x, y, z ...)` 给fixed-size list, 不能直接 list.add().
-- Use `new ArrayList<>(Arrays.asList(...))` to wrap it up.
-
-
-```
-
 
 /*
 Given an index k, return the kth row of the Pascal's triangle.
@@ -25,8 +12,6 @@ Hide Tags Array
 Hide Similar Problems (E) Pascal's Triangle
 
 */
-
-
 /*
      1
     1 1
