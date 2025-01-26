@@ -1,10 +1,4 @@
-E
-tags: Hash Table, Bit Manipulation
 
-Bit XOR: 当两个bit不同时，return 1. 
-题目正要消光所有重复出现的数儿留下出现一次的那个.
-
-```
 /*
 Given a non-empty array of integers, every element appears twice except for one. Find that single one.
 
