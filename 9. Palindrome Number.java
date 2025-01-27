@@ -1,19 +1,3 @@
-E
-tags: Math
-
-#### Reverse half of the number
-- build reversed integer 直到midpoint, where x <= reverse
-- 如果input双数: x == reverse
-- 如果input单数 (而且x>reverse): x == reverse/10
-
-#### Consider palindrome
-- optionA: compare digit by digit
-- optionB: reverse half of the string/int, and compare with other half.
-
-
-
-
-```
 
 /*
 Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
