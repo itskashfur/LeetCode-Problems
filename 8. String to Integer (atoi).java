@@ -1,23 +1,3 @@
-M
-tags: Math, String
-time: O(n)
-space: O(n)
-
-#### String 
-- Handling use cases
-- Parse steps:
-    - 0. trim space
-    - 1 parse operator
-    - 2 trim leading zero
-    - 3. get number string
-- Validation:
-    - 1. max length over max integer length
-    - 2. exceed min/max value
-- Alternatively, regular expression, but not applicable in interview: if (!str.matches("[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)")).  猛了一点
-
-```
-
-
 
 /*
 02.02.2016 from leetcode
