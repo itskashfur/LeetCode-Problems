@@ -1,20 +1,4 @@
-E
-tags: Linked List
-
-从Linked list 里面摘掉重复元素, 只留下unique元素.
-
-#### Linked List
-- sorted list, 重复元素都在一起
-- 知道如何构建Linked List.
-- 一点遇到重复元素: node.val == node.next.val, 就去掉.
-- 用一个dummy node 来跑路
-- 注意:
-- 只有当没有重复的时候, 才node = node.next; 
-- 有重复的时候, 当后面第三个元素被提上来之后, 还是可能跟当下元素重复, 所以不能前移node.
-- ex: A -> A -> A
-- while loop 里面check node 和 node.next 比较好, 这样ending position会非常清晰
-
-```
+83.Remove Duplicates From Sorted Array II Problem : JAVA Solution
 /*
 Given a sorted linked list, delete all duplicates such that each element appear only once.
 
@@ -107,14 +91,4 @@ public class Solution {
         return head;
     }  
 }
-
-
-
-
-/*
-Use two pointers:
-http://gongxuns.blogspot.com/2012/12/leetcode-remove-duplicates-from-sorted_11.html
-*/
-
-
 ```
