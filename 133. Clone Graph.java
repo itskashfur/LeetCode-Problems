@@ -1,33 +1,4 @@
-M
-tags: DFS, BFS, Graph
-time: O(n)
-space: O(n)
 
-给一个graph node, 每个node有list of neighbors. 复制整个graph, return new head node.
-       
-实现起来就好像在crawl urls.
-
-#### 思想
-- Use HashMap to mark cloned nodes: `map<oldNode, newNode>`
-    - 1) make new curr node; 
-    - 2) clone all neibhors and add them
-- Use the map to avoid visited nodes
-- time: O(n). visit all nodes
-- space: O(n). Technically only travels n levels/stacks to circle all nodes (undirected & connected)
-
-#### DFS
-- Given graph node obj `{val, list of neighbor}`: copy the node and all neighbors
-- Mark visited using map<oldNode, newNode>
-- for loop on the each one of the neighbors: map copy, record in map, and further dfs
-- once dfs completes, add newNeighbor as neighbor of the new node (get to it via map)
-- 主要思想是: 一旦复制过了, 不必要重新复制
-
-#### BFS
-- Copy the root node, then copy all the neighbors. 
-- Mark copied node in map.
-- Use queue to contain the newly added neighbors. Need to work on them in the future.
-
-```
 /*
 Given a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph. 
 Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors.
