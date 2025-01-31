@@ -1,23 +1,4 @@
-M
-tags: String, Stack
-time: O(n)
-space: O(n)
 
-给一个path, simplify成最简单形式. 注意考虑edge case
-
-#### Stack
-- 理解unix path:
-    - 1. `.` 代表current directory, 可以忽略. 
-    - 2. `../` 表示previous level. 
-    - 3. double slash 可以忽略.
-    - 4. empty string 要output `/`
-- parse by '/', and go over using stack
-    - put [folder] in stack
-    - ".." pop() 1 element of the stack, if anything
-    - "." stays the same
-- output stack reversely: connect with '/', skip tail
-
-```
 /*
 Given an absolute path for a file (Unix-style), simplify it. Or in other words, convert it to the canonical path.
 
