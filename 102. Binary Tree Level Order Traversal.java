@@ -1,21 +1,4 @@
-M
-tags: Tree, BFS, DFS
-time: O(n)
-space: O(n)
 
-如题.
-
-#### Method1: BFS
-- 最普通,Non-recursive: BFS, queue, 用个queue.size()来end for loop:换行。   
-- 或者用两个queue. 当常规queue empty，把backup queue贴上去
-
-#### Method2: DFS
-- 每个level都应该有个ArrayList. 那么用一个int level来查看：是否每一层都有了相应的ArrayList。   
-- 如果没有，就加上一层。    
-- 之后每次都通过DFS在相应的level上面加数字。
-
-
-```
 /*
 Given a binary tree, return the level order traversal of its nodes' values. 
 (ie, from left to right, level by level).
