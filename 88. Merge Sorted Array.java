@@ -1,17 +1,4 @@
-E
-tags: Array, Two Pointers
-time: O(n)
-space: O(1)
 
-给两个排好序的数组, merge. 其中一个数组nums1有多余的位置
-
-#### Basics
-- A够长，那么可以从A的尾部开始加新元素: 从尾部，是大数字优先排末尾的.  
-- Deal with remaining:
-    - When A values are used up, put remian of B into it
-    - When B values are finished, there is nothing todo. The remain of A is already in place.
-
-```
 /*
 Given two sorted integer arrays nums1 and nums2, 
 merge nums2 into nums1 as one sorted array.
@@ -98,6 +85,4 @@ class Solution {
         }
     }
 }
-
-
-```
+...
