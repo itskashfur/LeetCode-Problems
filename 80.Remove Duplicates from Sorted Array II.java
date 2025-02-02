@@ -1,24 +1,3 @@
-M
-1526348390
-tags: Array, Two Pointers
-
-给一个sorted array, 把重复的去掉: 也就是把不重复的按照顺序贴上来, array末尾多余的位置无所谓.
-
-最多可重复出元素的数量不超过2个. return unique item 的长度.
-
-#### Basic 
-- sorted array, 重复元素都在一起
-- 跟 `Remove Duplicates from Sorted Array` 几乎一模一样, 只不过unique index现在可以 validate 2 位
-- 其余一模一样, use index to track unique item; skip if duplicated for more than 2 times
-- O(n) time, O(1) space
-- 这里也可以真的用2个pointers 写while loop, 但是没有必要, 只是单纯地走一个for loop其实就足够.
-
-#### Follow up: k duplicates, Two Pointers
-- when index i and i-1 are diff, use count=1 to start
-- in while loop, keep count++ until count==k
-- reset when next diff comes in
-
-```
 /*
 Given a sorted array nums, remove the duplicates in-place such that 
 duplicates appeared at most twice and return the new length.
@@ -27,9 +6,7 @@ Do not allocate extra space for another array,
 you must do this by modifying the input array in-place with O(1) extra memory.
 
 Example 1:
-
 Given nums = [1,1,1,2,2,3],
-
 Your function should return length = 5, 
 with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.
 
