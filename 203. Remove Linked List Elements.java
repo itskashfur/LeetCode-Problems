@@ -1,3 +1,4 @@
+203.Remove Linked List Element Problem : JAVA Solution
 /*
 Remove all elements from a linked list of integers that have value val.
 
