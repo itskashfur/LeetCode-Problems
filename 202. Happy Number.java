@@ -1,13 +1,4 @@
-E
-tags: Hash Table, Math
-time: O(m), m iterations
-space: O(m), m number in set
 
-Basic Implementation of the requirements.
-
-用HashSet存查看过的数值。若重复，return false.
-
-```
 /*
 Write an algorithm to determine if a number is happy.
 
@@ -53,5 +44,3 @@ class Solution {
         return sum;
     }
 }
-
-```
