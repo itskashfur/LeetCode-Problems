@@ -1,13 +1,3 @@
-E
-tags: Linked List
-
-从linked list 里面去掉所有的 target
-
-#### Basics
-- 如果match: node.next = head.next;
-- 如果不match, node 和 head 一起移动
-
-```
 /*
 Remove all elements from a linked list of integers that have value val.
 
@@ -44,5 +34,3 @@ class Solution {
         return dummy.next;
     }
 }
-
-```
