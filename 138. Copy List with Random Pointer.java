@@ -1,22 +1,4 @@
-M
-tags: Hash Table, Linked List
-time: O(n)
-space: O(n)
 
-deep copy linked list. linked list 上有random pointer to other nodes.
-
-#### HashMap, Linked List, time, space: O(n)
-- Basic Implementation of copy linked list:
-    - use a iterator node to iterate over the list: 遍历head.next .... null.    
-    - use a dummy node to hold reference to the iterator node.
-- Map<original, new node>: 1. avoid creating same node; 2. return the new node if existing
-    - 每一步都check map里面有没有head. 没有? 加上
-    - 每一步都check map里面有没有head.random. 没有? 加上
-- Note, there is a way to skip the extra map O(n): https://leetcode.com/problems/copy-list-with-random-pointer/discuss/43491/A-solution-with-constant-space-complexity-O(1)-and-linear-time-complexity-O(N)
-    - However, creating a deep clone of the list is already O(n) extra space, so it is NOT effectively O(1) w/o map
-    - It may be beneficial, if we can not hold all nodes in memory, then the approach w/o map is more applicable.
-
-```
 /*
 A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
 
@@ -136,5 +118,3 @@ public class Solution {
         return dummy.next;
     }
 }
-
-```
