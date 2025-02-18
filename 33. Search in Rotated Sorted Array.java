@@ -1,25 +1,4 @@
-M
-tags: Array, Binary Search
-time: O(logn)
-space: O(1)
-
-#### Binary Search
-- 关键点, 是找到 [mid]是在左边/还是右边的continous increasing subarray: 比较 `A[start] < A[mid]`
-- 在两个section 里面分别讨论 target 的位置     
-    - 1. `nums[start] < nums[mid]`: start是从index=0开始的, 那就说明 `mid在前半段`
-    - 2. `nums[start] > nums[mid]`: start是从index=0开始的, 那就说明 `mid在后半段`
-- Binary search template: 
-    - 1) `start + 1 < end` (adjacent indexes)
-    - 2) start/end = mid, 
-    - 3) compare start and end individually
-
-#### binary search break point, 然后继续binary search target
-- 1. binay search break point     
-- 2. binary search target      
-- 注意等号，在判断target在前半段还是后半段：if (A[p1] <= target && target <= A[breakPoint])      
-
-
-
+33.Search in Rotated Sorted Array Problem : JAVA Solution
 ```
 /*
 Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
