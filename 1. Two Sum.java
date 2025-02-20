@@ -1,28 +1,4 @@
-tags: Array, Hash Table
-time: O(n)
-space: O(n)
-
-HashMap<value, index>
-Relatively Violent and Simple Method
-Relatively Violent and Simple Method: Find a value, store an index.
-
-If a result is matched in the HashMap, then return the stored index in the HashMap.
-
-O(n) space and time.
-
-Sort Array, Two Pointers Method
-Sort array, two pointers method:
-
-Use two pointers to search by incrementing from front and decrementing from back. Sorting takes O(nlogn) time.
-
-Note that you need to use additional space to retain the original array, to find the index later. (You cannot use HashMap here because it uses value as the key, but the value might be repeated.)
-
-O(n) space, O(nlogn) time.
-
-  
-
-
-```
+01.Two Sum Problem : JAVA Solution
 /**
 LeetCode: 0-based answer
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
