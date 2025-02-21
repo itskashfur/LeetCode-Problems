@@ -1,6 +1,6 @@
 2. Add Two Number Problem : JAVA & PYTHON Solution
 
-//.........................................JAVA SOLUTION............................................
+
 class ListNode {
     int val;
     ListNode next;
