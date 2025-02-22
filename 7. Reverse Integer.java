@@ -1,5 +1,4 @@
 7.Reverse Integer Problem : JAVA Solution
-```
 /*
 LeetCode
 Given a 32-bit signed integer, reverse digits of an integer.
