@@ -1,32 +1,4 @@
-M
-tags: DFS, BFS, Union Find, Matrix DFS
-time: O(n)
-space: O(n)
-
-给一个2Dmatrix, 里面是1和0, 找#of island.
-
-#### Method1, DFS
-- visit all nodes connected with the starting node
-    - double for loop, test all starting nodes
-    - val == 1: 1) count++; 2)DFS from this (i,j);
-    - Mark visited (x,y) = '0'
-- time: O(n), visit all nodes
-- space: O(n), stack
-
-#### Method2, Union Find
-- 可以用union-find， 就像Number of island II 一样.
-    - 只不过这个不Return list, 而只是# of islands
-    - Union Find is independent from the problem: it models the union status of integers.
-    - Return the total # of unions (which is # of islands)
-- in reality: it is a bit slow.
-- time: visit all nodes just once, O(n). Union Find will visit all nodes once and union them
-- space: O(n), union find takes O(n) space
-- 记住UnionFind的模板和几个变化(Connecting Graph I, II, III), 最后归总的代码写起来就比较简单. 
-
-#### Method3: BFS
-- use queue to hold 1 island, keep adding 4-direction islands; mark visited with '0' 
-- check entire board for any remaining one.
-
+200. Number of Islands Problem : JAVA Solution
 ```
 /*
 Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. 
