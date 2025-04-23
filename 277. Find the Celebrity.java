@@ -1,4 +1,4 @@
-277.Find the Celebrity Problem : JAVA Solution
+277. Find the Celebrity Problem : JAVA Solution
 
 ```
 /*
