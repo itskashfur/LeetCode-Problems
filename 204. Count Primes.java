@@ -1,19 +1,4 @@
-E
-tags: Hash Table, Math
-
-计数: 所有小于n的prime number.
-
-#### prime number定义
-- >=2的没有除自己和1以外公约数的数。   
-- 还有另外一个定义方法: 这个n,有没有小于n的一个i, 而达到： i * i + # of i = n. 如果有，那就不是 prime   
-
-#### Steps
-- 一个boolean长条，存isPrime[]。 然后从i=2， 全部变true.
-- hash key: the number itself
-- 然后利用这个因子的性质，非prime满足条件： self*self, self * self + self ... etc.     
-- 所以就check每一个j, j+i, j+i+i, 然后把所有non-prime全部mark成false.     
-- 最后，数一遍还剩下的true个数就好了   
-
+204: Count Primes Problem : JAVA Solution 
 ```
 /*
 Description:
