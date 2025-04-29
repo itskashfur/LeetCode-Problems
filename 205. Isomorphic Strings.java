@@ -1,13 +1,4 @@
-E
-tags: Hash Table
-time: O(n)
-space: O(n)
-
-#### HashMap
-- check 2 failture cases:
-    - same key, value not matching
-    - two key maps to same value
-
+205: Isomorphic Strings Problem : JAVA Solution
 ```
 /*
 Given two strings s and t, determine if they are isomorphic.
