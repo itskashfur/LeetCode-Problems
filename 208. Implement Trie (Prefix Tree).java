@@ -1,28 +1,5 @@
 208. Implement Trie (Prefix Tree) Problem : JAVA Solution
 ```
-/**
-Implement a trie with insert, search, and startsWith methods.
-
-Example:
-
-Trie trie = new Trie();
-
-trie.insert("apple");
-trie.search("apple");   // returns true
-trie.search("app");     // returns false
-trie.startsWith("app"); // returns true
-trie.insert("app");   
-trie.search("app");     // returns true
-Note:
-
-You may assume that all inputs are consist of lowercase letters a-z.
-All inputs are guaranteed to be non-empty strings.
-*/
-/*
-Trie Structure: 
-- trace the char to children node: Map<char, TrieNode>
-- boolean isEnd to indicate if there is string end with this node
-*/
 class Trie {
     class TrieNode {
         boolean isEnd = false;
@@ -67,12 +44,3 @@ class Trie {
         return node;
     }
 }
-
-/**
- * Your Trie object will be instantiated and called as such:
- * Trie obj = new Trie();
- * obj.insert(word);
- * boolean param_2 = obj.search(word);
- * boolean param_3 = obj.startsWith(prefix);
- */
-```
