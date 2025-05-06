@@ -1,16 +1,4 @@
-E
-tags: Linked List
-
-#### Iterative
-- Linked List的基本操作: 每次insert在开头
-- 用head来循环所有node
-- 不需要额外空间
-- Time O(n), Space O(1)
-
-#### Recursive with a helper function
-- source node: head
-- target node: new head
-
+206. Reverse Linked List Problem : JAVA Solution
 ```
 /*
 Reverse a linked list.
