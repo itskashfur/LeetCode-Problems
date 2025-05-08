@@ -1,15 +1,3 @@
-M
-tags: Trie, Design, Backtracking
-time: O(n) to search and to add word
-space: < O(mn), depends on the input. m = # of words
-
-#### Trie, prefix tree.
-- Trie Structure: `boolean isEnd`, `HashMap<Character, TrieNode> children`
-    - trie.addWord: 没node就加，有node就移动
-    - trie.search: 没node就return false，有node就移动
-- Alternatively, the hash can be `TrieNode[26]` a fixed size array when applicable
-    - I like map better for the simplicity to write (w/o converting char -> index)
-
 
 ```
 /*
