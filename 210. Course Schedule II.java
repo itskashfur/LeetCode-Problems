@@ -1,28 +1,4 @@
-M
-tags: DFS, BFS, Graph, Topological Sort
-time: O(n)
-space: O(n)
-
-- `207. Course Schedule` has more notes
-- 一堆课用int[2] pair 来表示. [1, 0] 表示要上课1的话, 必须先把课0上了. 
-- 每一个数字都是一个ndoe, 题目求这个最后排好的课的list
-- 如果排不好, 就给个空就好
-- input是 numOfCourses, 还有这个prerequisites [[]]
-
-
-#### Topological Sort, Indegree, BFS
-- 用`List[] edges; edges[i] = new ArrayList<>();` 来表示graph: 就是每个node, to all its neighbors
-- 每个没有 inDegree==0 node, 都是可以加进 final list里面的. 比如一开始找到的那些 inDegree = 0的 node
-- 注意, 如果 prerequisites = [], 那么就是说这些课都independent, 开个int[0 ~ n-1]的数组并赋值就好.
-- 如果有cycle, 严格意义上就做不了topological sort, 也无法涵盖所有nodes,  那么return [ ]
-
-#### DFS
-- 根据 Course Schedule 里面的DFS 修改
-- 维持visited int[]全局变量
-- 维持sortedList int[] 全局变量, 注意加进去的时候是 add(0, node) 加在开头这样
-- 每次到一个node的children全部DFS走完之后, 就可以把他加进final list里面
-- 如果有cycle, 也就是dfs return false的时候, 这个题目判定排课失败, return new int[] { }
-
+210: Course Schedule II Problem : JAVA Solution
 ```
 /*
 There are a total of n courses you have to take, labeled from 0 to n-1.
