@@ -143,15 +143,8 @@ class Solution {
     }
 }
 
+//Another One
 
-/*
-	http://blog.csdn.net/ljiabin/article/details/45847019
-
-	Based on Course Schedule I, now we need to return all nodes with by the seq number.
-	
-	Note:
-	The map is built based on <most deepest prerequisites, list of course based on that root prerequsites>
-*/
 public class Solution {
 	HashMap<Integer, List<Integer>> map;
 	int[] visited;
