@@ -1,19 +1,4 @@
-E
-tags: Array, Hash Table
-time: O(n)
-space: O(1)
-
-
-无序数组, 找是否有重复element, return true/false.
-
-#### HashSet
-- No brain: HashSet.
-- Time O(n), Space O(n)
-
-#### Sort, Binary Search
-- Arrays.sort(x): Time O(nLogN), Space O(1)
-- 排序后, 重复数会排在一起, 然后 binary search
-
+117. Contains Duplicate Problem : JAVA Solution
 ```
 /*
 Given an array of integers, find if the array contains any duplicates. 
