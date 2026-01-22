@@ -6,13 +6,10 @@ Given an array of integers, return indices of the two numbers such that they add
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 Example:
-
 Given nums = [2, 7, 11, 15], target = 9,
-
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
-*/
-/*
+
 Thoughts:
     Using a HashMap, O(n) space and O(n) time.
     Thinking process:
@@ -58,10 +55,9 @@ O(n) Space, O(nlogn) Time
 O(n) Space, O(n) Time
 Tags Expand 
 Two Pointers Sort Hash Table Array Airbnb Facebook
-*/
 
 //2. O(n) Space O(nlogn) time
-/*
+
     Feels like binary search when looking at O(nlogn)
     1. sort
     2. loop all number
@@ -112,13 +108,5 @@ public class Solution {
         return rst;
     }
 }
-
-
-
-
-
-
-
-
-
 ```
+
