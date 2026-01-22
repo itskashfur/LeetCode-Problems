@@ -12,9 +12,7 @@ Given binary tree {3,9,20,#,#,15,7},
     /  \
    15   7
  
-
 return its level order traversal as:
-
 [
   [3],
   [9,20],
@@ -84,6 +82,4 @@ public class Solution {
         dfs(root.right, level + 1, rst);
     }
 }
-
-
 ```
