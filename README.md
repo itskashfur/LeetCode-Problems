@@ -1,4 +1,4 @@
-# 🚀 LeetCode Solutions Series (Java)
+# 🚀 LeetCode Solutions Series (Java/Python)
 
 A clean, well-structured, and continuously updated repository containing my solutions to LeetCode problems. This repository serves as my daily DSA practice log and a public portfolio for technical interviews.
 
