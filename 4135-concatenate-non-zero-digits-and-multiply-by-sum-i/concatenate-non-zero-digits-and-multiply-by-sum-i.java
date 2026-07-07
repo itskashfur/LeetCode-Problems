@@ -1,11 +1,26 @@
 class Solution {
     public long sumAndMultiply(int n) {
-        long x = 0, s = 0;
-        for (char c : String.valueOf(n).toCharArray())
-            if (c != '0') {
-                x = x * 10 + c - '0';
-                s += c - '0';
+        long x = 0;
+        long sum = 0;
+        long multiplier = 1;
+
+        // WHAT: Process the number digit by digit mathematically from right to left
+        // WHY: Eliminates string parsing conversion overhead, achieving O(1) space complexity
+        while (n > 0) {
+            int digit = n % 10;
+            
+            if (digit != 0) {
+                // Prepend the digit to the left side of our growing number 'x'
+                x += digit * multiplier;
+                // Scale the multiplier to shift the next valid digit into the higher place-value position
+                multiplier *= 10;
+                // Accumulate the digit sum
+                sum += digit;
             }
-        return x * s;
+            
+            n /= 10; // Move to the next digit
+        }
+
+        return x * sum;
     }
 }
