@@ -56,7 +56,6 @@ class Solution {
             }
             prevNonZero[i] = currPrev;
         }
-
         // Process each query in O(1) time
         int[] ans = new int[queries.length];
         for (int i = 0; i < queries.length; i++) {
@@ -81,7 +80,6 @@ class Solution {
                 ans[i] = (int) ((x * (sum % MOD)) % MOD);
             }
         }
-
         return ans;
     }
 }
