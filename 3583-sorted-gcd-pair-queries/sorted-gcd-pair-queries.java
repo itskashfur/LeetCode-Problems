@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public int[] gcdValues(int[] nums, long[] queries) {
         // Find the maximum value in the array to set our processing bounds
