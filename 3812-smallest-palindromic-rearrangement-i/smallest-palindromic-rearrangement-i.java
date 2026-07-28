@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public String smallestPalindrome(String s) {
         int n = s.length();
