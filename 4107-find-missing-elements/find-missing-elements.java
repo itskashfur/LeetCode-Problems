@@ -2,26 +2,26 @@ import java.util.*;
 
 class Solution {
     public List<Integer> findMissingElements(int[] nums) {
-        int minVal = Integer.MAX_VALUE;
-        int maxVal = Integer.MIN_VALUE;
-        Set<Integer> present = new HashSet<>();
+        int smallest = Integer.MAX_VALUE;
+        int largest = Integer.MIN_VALUE;
 
-        // Find min, max, and store elements in a set
-        for (int num : nums) {
-            minVal = Math.min(minVal, num);
-            maxVal = Math.max(maxVal, num);
-            present.add(num);
+        for (int x : nums) {
+            smallest = Math.min(smallest, x);
+            largest = Math.max(largest, x);
         }
 
-        List<Integer> result = new ArrayList<>();
+        boolean[] present = new boolean[largest - smallest + 1];
+        for (int x : nums) {
+            present[x - smallest] = true;
+        }
 
-        // Iterate through the full range [minVal, maxVal]
-        for (int i = minVal; i <= maxVal; i++) {
-            if (!present.contains(i)) {
-                result.add(i);
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < present.length; i++) {
+            if (!present[i]) {
+                list.add(smallest + i);
             }
         }
 
-        return result;
+        return list;
     }
 }
