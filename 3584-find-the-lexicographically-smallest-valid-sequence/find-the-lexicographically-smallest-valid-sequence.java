@@ -3,45 +3,32 @@ class Solution {
         int n = word1.length();
         int m = word2.length();
 
-        int[] last = new int[m];
-
-        java.util.Arrays.fill(last, -1);
-
-        int i = n - 1;
+        // suffix[i] = length of word2 suffix matched in word1[i...n-1]
+        int[] suffix = new int[n + 1];
         int j = m - 1;
-
-        while (i >= 0 && j >= 0) {
-            if (word1.charAt(i) == word2.charAt(j)) {
-                last[j] = i;
-                --j;
+        for (int i = n - 1; i >= 0; i--) {
+            if (j >= 0 && word1.charAt(i) == word2.charAt(j)) {
+                j--;
             }
-
-            --i;
+            suffix[i] = m - 1 - j;
         }
 
-        int[] ans = new int[m];
-        int size = 0;
-
-        boolean canSkip = true;
+        int[] result = new int[m];
         j = 0;
+        boolean modified = false;
 
-        for (i = 0; i < n && j < m; ++i) {
-            if (word1.charAt(i) == word2.charAt(j)) {
-                ans[size++] = i;
-                ++j;
-            }
-            else if (canSkip &&
-                     (j == m - 1 || i < last[j + 1])) {
-                canSkip = false;
-                ans[size++] = i;
-                ++j;
+        for (int i = 0; i < n && j < m; i++) {
+            boolean isMatch = (word1.charAt(i) == word2.charAt(j));
+
+            if (isMatch) {
+                result[j++] = i;
+            } else if (!modified && suffix[i + 1] >= m - 1 - j) {
+                // Change current character to match word2[j]
+                result[j++] = i;
+                modified = true;
             }
         }
 
-        if (j == m) {
-            return ans;
-        }
-
-        return new int[0];
+        return (j == m) ? result : new int[0];
     }
 }
