@@ -10,17 +10,14 @@ class Solution {
             }
         }
 
-        // Case 1: All elements are 0
         if (!hasNonZero) {
             return 0;
         }
 
-        // Case 2: XOR of all elements is already non-zero
         if (totalXor != 0) {
             return nums.length;
         }
 
-        // Case 3: Total XOR is 0, but non-zero elements exist
         return nums.length - 1;
     }
 }
