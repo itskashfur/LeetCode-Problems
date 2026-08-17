@@ -1,82 +1,37 @@
 class Solution {
     public int stoneGameV(int[] stoneValue) {
         int n = stoneValue.length;
-
-        long[] prefix = new long[n + 1];
-
+        
+        // Compute prefix sums for O(1) range sum queries
+        int[] prefix = new int[n + 1];
         for (int i = 0; i < n; i++) {
             prefix[i + 1] = prefix[i] + stoneValue[i];
         }
 
+        // dp[i][j] stores the max score achievable from subarray stoneValue[i...j]
         int[][] dp = new int[n][n];
 
-        int[][] leftBest = new int[n][n];
-
-        int[][] rightBest = new int[n][n];
-
-        int[] leftPtr = new int[n];
-
-        int[] rightPtr = new int[n];
-
-        for (int i = 0; i < n; i++) {
-            leftBest[i][i] = stoneValue[i];
-            rightBest[i][i] = stoneValue[i];
-
-            leftPtr[i] = i - 1;
-
-            rightPtr[i] = i;
-        }
-
+        // Process intervals by increasing length
         for (int len = 2; len <= n; len++) {
-            for (int l = 0; l + len <= n; l++) {
-                int r = l + len - 1;
+            for (int i = 0; i <= n - len; i++) {
+                int j = i + len - 1;
 
-                long total = prefix[r + 1] - prefix[l];
+                // Try all possible split points k (i <= k < j)
+                for (int k = i; k < j; k++) {
+                    int leftSum = prefix[k + 1] - prefix[i];
+                    int rightSum = prefix[j + 1] - prefix[k + 1];
 
-                while (leftPtr[l] + 1 <= r - 1) {
-                    int k = leftPtr[l] + 1;
-                    long leftSum = prefix[k + 1] - prefix[l];
-
-                    if (2 * leftSum > total) {
-                        break;
+                    if (leftSum < rightSum) {
+                        dp[i][j] = Math.max(dp[i][j], leftSum + dp[i][k]);
+                    } else if (leftSum > rightSum) {
+                        dp[i][j] = Math.max(dp[i][j], rightSum + dp[k + 1][j]);
+                    } else { // leftSum == rightSum
+                        dp[i][j] = Math.max(dp[i][j], leftSum + Math.max(dp[i][k], dp[k + 1][j]));
                     }
-
-                    leftPtr[l]++;
                 }
-                while (rightPtr[l] <= r - 1) {
-                    int k = rightPtr[l];
-                    long leftSum = prefix[k + 1] - prefix[l];
-
-                    if (2 * leftSum >= total) {
-                        break;
-                    }
-
-                    rightPtr[l]++;
-                }
-
-                int best = 0;
-
-                if (leftPtr[l] >= l) {
-                    best = leftBest[l][leftPtr[l]];
-                }
-
-                if (rightPtr[l] <= r - 1) {
-                    best = Math.max(best, rightBest[rightPtr[l] + 1][r]);
-                }
-
-                dp[l][r] = best;
-
-                leftBest[l][r] = Math.max(
-                    leftBest[l][r - 1],
-                    dp[l][r] + (int) total
-                );
-
-                rightBest[l][r] = Math.max(
-                    rightBest[l + 1][r],
-                    dp[l][r] + (int) total
-                );
             }
         }
+
         return dp[0][n - 1];
     }
 }
