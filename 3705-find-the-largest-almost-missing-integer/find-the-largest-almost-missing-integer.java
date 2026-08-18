@@ -9,7 +9,6 @@ class Solution {
             freq.put(num, freq.getOrDefault(num, 0) + 1);
         }
 
-        // Case 1: k == 1
         if (k == 1) {
             int maxVal = -1;
             for (int num : nums) {
@@ -20,7 +19,6 @@ class Solution {
             return maxVal;
         }
 
-        // Case 2: k == n
         if (k == n) {
             int maxVal = -1;
             for (int num : nums) {
@@ -28,14 +26,12 @@ class Solution {
             }
             return maxVal;
         }
-
-        // Case 3: 1 < k < n
         int ans = -1;
-        // Check first element
+    
         if (freq.get(nums[0]) == 1) {
             ans = Math.max(ans, nums[0]);
         }
-        // Check last element
+        
         if (freq.get(nums[n - 1]) == 1) {
             ans = Math.max(ans, nums[n - 1]);
         }
