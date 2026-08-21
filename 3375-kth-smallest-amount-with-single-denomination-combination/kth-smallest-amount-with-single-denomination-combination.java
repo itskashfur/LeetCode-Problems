@@ -2,14 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Solution {
-    // Helper record to store precomputed LCM and Inclusion-Exclusion sign
     private record Subset(long lcm, int sign) {}
 
     public long findKthSmallest(int[] coins, int k) {
         int n = coins.length;
         List<Subset> subsets = new ArrayList<>();
 
-        // Generate all non-empty subsets
         for (int mask = 1; mask < (1 << n); mask++) {
             long currentLcm = 1;
             int size = 0;
@@ -23,7 +21,6 @@ class Solution {
             subsets.add(new Subset(currentLcm, sign));
         }
 
-        // Binary search bounds
         long minCoin = coins[0];
         for (int coin : coins) {
             minCoin = Math.min(minCoin, coin);
@@ -37,7 +34,7 @@ class Solution {
             long mid = left + (right - left) / 2;
             if (countValid(mid, subsets) >= k) {
                 ans = mid;
-                right = mid - 1; // Try to find a smaller valid amount
+                right = mid - 1;
             } else {
                 left = mid + 1;
             }
