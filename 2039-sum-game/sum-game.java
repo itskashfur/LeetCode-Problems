@@ -21,12 +21,10 @@ class Solution {
             }
         }
 
-        // If total '?' count is odd, Alice gets the last move and can force inequality
         if ((leftQ + rightQ) % 2 != 0) {
             return true;
         }
-
-        // Bob wins if initial sum difference is exactly offset by 9 for every 2 '?' difference
         return (leftSum - rightSum) * 2 + 9 * (leftQ - rightQ) != 0;
     }
 }
+    
