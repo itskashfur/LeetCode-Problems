@@ -12,13 +12,11 @@ class Solution {
 
         // Find matching '{'
         int l = s.lastIndexOf('{', r);
-
         String left = s.substring(0, l);
         String right = s.substring(r + 1);
 
         // Content inside { }
         String inside = s.substring(l + 1, r);
-
         for (String part : inside.split(",")) {
             dfs(left + part + right);
         }
